@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject player;
 
-    private float spinSpeed = 0.1f;
+    private float spinSpeed = 0.083f;
 
     public GameObject bullet;
 
@@ -33,14 +33,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             player.transform.Rotate(Vector3.forward * -90 * spinSpeed);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(bullet, BulletPoint.transform.position, BulletPoint.transform.rotation);
-            Debug.Log("tRUBI");
-
-            rb.AddForce(transform.up * 500f);
         }
     }
 }
