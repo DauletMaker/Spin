@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             player.transform.Rotate(Vector3.forward * -90 * spinSpeed);
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bullet, BulletPoint.transform.position, BulletPoint.transform.rotation);
             Debug.Log("tRUBI");
