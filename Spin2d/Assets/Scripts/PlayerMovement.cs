@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject player;
 
-    private float spinSpeed = 0.07f;
+    private float spinSpeed = 0.06f;
 
     public GameObject bullet;
 
