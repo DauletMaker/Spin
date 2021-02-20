@@ -7,6 +7,8 @@ public class Enemy1Script : MonoBehaviour
     // Start is called before the first frame update
     private Transform target;
     public float speed = 5f;
+    public ParticleSystem DeathParticles;
+
     void Start()
     {
       //  StartCoroutine(SelfDestruct());
@@ -50,6 +52,9 @@ public class Enemy1Script : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+
+            Instantiate(DeathParticles, transform.position, transform.rotation);
+            DeathParticles.Play();
         }
     }
 }
