@@ -8,9 +8,12 @@ public class Enemy2Script : MonoBehaviour
     public float speed = 3f;
     public Transform E2_bullet_point;
     public GameObject E2bullet;
+    public float timestamp = 0f;
+  //  private bool isShooting = false;
     void Start()
     {
         //  StartCoroutine(SelfDestruct());
+      
     }
 
   
@@ -23,14 +26,20 @@ public class Enemy2Script : MonoBehaviour
             speed = 3f;
             RotateTowards(target.position);
             MoveTowards(target.position);
+
         }
-        else if(Vector3.Distance(transform.position, target.position) <= 5f) 
+        else if (Vector3.Distance(transform.position, target.position) <= 5f)
         {
-            StartCoroutine(E2_Shooting());
+            // StartCoroutine(E2_Shooting());
             RotateTowards(target.position);
             speed = 0f;
-            
-           
+            if (timestamp <= Time.time)
+            {
+                timestamp = Time.time + 1f + (Time.time - timestamp); //i dont know what this is but it kinda works
+                Debug.Log(timestamp);
+                StartCoroutine(E2_Shooting());
+
+            }
         }
     }
     private void RotateTowards(Vector2 target)
@@ -63,9 +72,13 @@ public class Enemy2Script : MonoBehaviour
     
     IEnumerator E2_Shooting()
     {
-       
-        Instantiate(E2bullet, E2_bullet_point.transform.position, E2_bullet_point.transform.rotation);
-        yield return new WaitForSeconds(5f);
+        
+            Instantiate(E2bullet, E2_bullet_point.transform.position, E2_bullet_point.transform.rotation);
+            yield return new WaitForSeconds(1f);
+        
+           
+        
+        
 
     }
 

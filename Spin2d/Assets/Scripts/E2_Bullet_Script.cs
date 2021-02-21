@@ -20,4 +20,11 @@ public class E2_Bullet_Script : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

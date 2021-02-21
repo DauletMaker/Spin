@@ -26,4 +26,5 @@ public class BulletScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
+   
 }
