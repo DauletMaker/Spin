@@ -6,7 +6,7 @@ public class Enemy1Script : MonoBehaviour
 {
  
     private Transform target;
-    public float speed = 5f;
+    public float speed = 3f;
     public ParticleSystem DeathParticles;
 
     void Start()

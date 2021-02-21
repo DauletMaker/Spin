@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy2Script : MonoBehaviour
 {
     private Transform target;
-    public float speed = 5f;
+    public float speed = 3f;
     
     void Start()
     {
@@ -17,11 +17,16 @@ public class Enemy2Script : MonoBehaviour
     {
         target = GameObject.FindWithTag("Player").transform;
 
-        if (Vector3.Distance(transform.position, target.position) > 1f)
+        if (Vector3.Distance(transform.position, target.position) > 5f)
         {
-            
+            speed = 3f;
             RotateTowards(target.position);
             MoveTowards(target.position);
+        }
+        else 
+        {
+            RotateTowards(target.position);
+            speed = 0f;
         }
     }
     private void RotateTowards(Vector2 target)
