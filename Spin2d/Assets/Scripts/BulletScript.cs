@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public int bulletspeed = 25;
+    int bulletspeed = 25;
     public Rigidbody2D bulletRb;
    
 
@@ -26,5 +26,4 @@ public class BulletScript : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
-   
 }
