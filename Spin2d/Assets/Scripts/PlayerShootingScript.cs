@@ -37,6 +37,10 @@ public class PlayerShootingScript : MonoBehaviour
             StartCoroutine(AmmoRegenerate());
             CanShoot = false;
         }
+        if(ammo == 5)
+        {
+            CanShoot = true;
+        }
     }
 
     public IEnumerator AmmoRegenerate()
@@ -57,8 +61,8 @@ public class PlayerShootingScript : MonoBehaviour
             BulletBar.Play("Health4");
             yield return new WaitForSeconds(0.4f);
             ammo = 5;
-            BulletBar.Play("Health5");
-            CanShoot = true;
+            BulletBar.Play("HealthFull");
+            
 
         }
     }
