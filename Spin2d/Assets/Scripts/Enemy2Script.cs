@@ -8,8 +8,13 @@ public class Enemy2Script : MonoBehaviour
     public float speed = 3f;
     public Transform E2_bullet_point;
     public GameObject E2bullet;
-    public float timestamp = 0f;
-  //  private bool isShooting = false;
+    public float timestamp = 1f;
+
+    private float timer = 0.0f;
+    private float waitTime = 1.0f;
+    private float visualTime = 0.0f;
+
+  
     void Start()
     {
         //  StartCoroutine(SelfDestruct());
@@ -19,6 +24,7 @@ public class Enemy2Script : MonoBehaviour
   
     void Update()
     {
+       
         target = GameObject.FindWithTag("Player").transform;
 
         if (Vector3.Distance(transform.position, target.position) > 5f)
@@ -30,15 +36,18 @@ public class Enemy2Script : MonoBehaviour
         }
         else if (Vector3.Distance(transform.position, target.position) <= 5f)
         {
-            // StartCoroutine(E2_Shooting());
+           
             RotateTowards(target.position);
             speed = 0f;
-            if (timestamp <= Time.time)
+            timer += Time.deltaTime;    
+            
+            if (timer > waitTime)   //condition to spawn Enemy2 every 1 second.
             {
-                timestamp = Time.time + 1f + (Time.time - timestamp); //i dont know what this is but it kinda works
-                Debug.Log(timestamp);
-                StartCoroutine(E2_Shooting());
+                visualTime = timer;
 
+                // Remove the recorded 1 second.           
+                timer = timer - waitTime;
+                StartCoroutine(E2_Shooting());
             }
         }
     }
