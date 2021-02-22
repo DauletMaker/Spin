@@ -2,29 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1Script : MonoBehaviour
+public class Enemy2Script : MonoBehaviour
 {
- 
     private Transform target;
     public float speed = 3f;
-    public ParticleSystem DeathParticles;
+    public Transform E2_bullet_point;
+    public GameObject E2bullet;
+    public float timestamp = 1f;
 
+    private float timer = 0.0f;
+    private float waitTime = 1.0f;
+    private float visualTime = 0.0f;
+
+  
     void Start()
     {
-      // StartCoroutine(SelfDestruct());
+        //  StartCoroutine(SelfDestruct());
+      
     }
 
   
     void Update()
     {
+       
         target = GameObject.FindWithTag("Player").transform;
-    
 
-        if (Vector3.Distance(transform.position, target.position) > 1f)
+        if (Vector3.Distance(transform.position, target.position) > 5f)
         {
-         //   transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+            speed = 3f;
             RotateTowards(target.position);
             MoveTowards(target.position);
+
+        }
+        else if (Vector3.Distance(transform.position, target.position) <= 5f)
+        {
+           
+            RotateTowards(target.position);
+            speed = 0f;
+            timer += Time.deltaTime;    
+            
+            if (timer > waitTime)   //condition to spawn Enemy2 every 1 second.
+            {
+                visualTime = timer;
+
+                // Remove the recorded 1 second.           
+                timer = timer - waitTime;
+                StartCoroutine(E2_Shooting());
+            }
         }
     }
     private void RotateTowards(Vector2 target)
@@ -51,8 +75,22 @@ public class Enemy1Script : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
 
-            Instantiate(DeathParticles, transform.position, transform.rotation);
-            DeathParticles.Play();
+        
         }
     }
+    
+    IEnumerator E2_Shooting()
+    {
+        
+            Instantiate(E2bullet, E2_bullet_point.transform.position, E2_bullet_point.transform.rotation);
+            yield return new WaitForSeconds(1f);
+        
+           
+        
+        
+
+    }
+
+        
+    
 }
