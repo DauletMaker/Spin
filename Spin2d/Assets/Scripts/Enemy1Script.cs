@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Enemy1Script : MonoBehaviour
 {
- 
+    // Start is called before the first frame update
     private Transform target;
-    public float speed = 3f;
+    public float speed = 5f;
     public ParticleSystem DeathParticles;
 
     void Start()
     {
-      // StartCoroutine(SelfDestruct());
+      //  StartCoroutine(SelfDestruct());
     }
 
-  
+    // Update is called once per frame
     void Update()
     {
         target = GameObject.FindWithTag("Player").transform;
-    
+        /*transform.LookAt(target.position);
+         transform.Rotate(new Vector3(0, -90, 0), Space.Self);*/
+        //transform.eulerAngles = new Vector3(0f, 0f, transform.eulerAngles.z);
 
         if (Vector3.Distance(transform.position, target.position) > 1f)
         {
