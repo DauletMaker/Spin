@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2403585182652175639}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Untagged
+  m_TagString: Enemy2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,3 +177,4 @@ MonoBehaviour:
   speed: 3
   E2_bullet_point: {fileID: 6639724690972238931}
   E2bullet: {fileID: 776978612577203922, guid: e4563d9ab844e6544a09981bc1063ea6, type: 3}
+  timestamp: 0

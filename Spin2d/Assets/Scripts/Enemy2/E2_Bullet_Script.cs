@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class E2_Bullet_Script : MonoBehaviour
 {
-    public float bulletspeed = 5f;
+    public float bulletspeed = 10f;
     public Rigidbody2D bulletRb;
+    public int rotSpeed;
+    
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(BulletDestroy());
     }
+     void Update()
+    {
+      
+    }
     private void FixedUpdate()
     {
+        
         bulletRb.velocity = (transform.up * bulletspeed);
     }
     public IEnumerator BulletDestroy()
@@ -25,6 +32,15 @@ public class E2_Bullet_Script : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2")
+        {
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
