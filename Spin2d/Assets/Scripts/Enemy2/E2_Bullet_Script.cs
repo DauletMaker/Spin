@@ -6,8 +6,10 @@ public class E2_Bullet_Script : MonoBehaviour
 {
     public float bulletspeed = 10f;
     public Rigidbody2D bulletRb;
-    public int rotSpeed;
-    
+    public int rotSpeed = 10;
+
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +18,13 @@ public class E2_Bullet_Script : MonoBehaviour
      void Update()
     {
       
+
     }
     private void FixedUpdate()
     {
-        
-        bulletRb.velocity = (transform.up * bulletspeed);
+    
+       
+         bulletRb.velocity = (transform.up * bulletspeed);
     }
     public IEnumerator BulletDestroy()
     {
