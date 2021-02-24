@@ -14,6 +14,8 @@ public class Enemy2Script : MonoBehaviour
     private float waitTime = 1.0f;
     private float visualTime = 0.0f;
 
+    public ParticleSystem DeathParticles;
+
   
     void Start()
     {
@@ -74,8 +76,8 @@ public class Enemy2Script : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+            Instantiate(DeathParticles, transform.position, transform.rotation);
 
-        
         }
     }
     

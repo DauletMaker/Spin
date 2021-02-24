@@ -178,3 +178,5 @@ MonoBehaviour:
   E2_bullet_point: {fileID: 6639724690972238931}
   E2bullet: {fileID: 776978612577203922, guid: e4563d9ab844e6544a09981bc1063ea6, type: 3}
   timestamp: 0
+  DeathParticles: {fileID: 6691854680416293912, guid: e7cb505e1611441f68e74e188b4678e0,
+    type: 3}
