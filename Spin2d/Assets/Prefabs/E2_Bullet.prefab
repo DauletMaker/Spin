@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletspeed: 5
   bulletRb: {fileID: -8149465241749033121}
-  rotSpeed: 50
+  rotSpeed: 10
 --- !u!50 &-8149465241749033121
 Rigidbody2D:
   serializedVersion: 4
