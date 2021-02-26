@@ -82,8 +82,8 @@ public class PlayerShootingScript : MonoBehaviour
 
     void StartCameraShaking()
     {
-        float cameraShakingOffsetX = Random.value * shakeMagnitude * 2 - shakeMagnitude;
-        float cameraShakingOffsetY = Random.value * shakeMagnitude * 2 - shakeMagnitude;
+        float cameraShakingOffsetX = Random.value * shakeMagnitude * 3.1f - shakeMagnitude;
+        float cameraShakingOffsetY = Random.value * shakeMagnitude * 3.1f - shakeMagnitude;
         Vector3 cameraIntermediatePosition = mainCamera.transform.position;
         cameraIntermediatePosition.x += cameraShakingOffsetX;
         cameraIntermediatePosition.y += cameraShakingOffsetY;
