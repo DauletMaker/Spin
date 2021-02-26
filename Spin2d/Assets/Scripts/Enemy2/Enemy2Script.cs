@@ -15,8 +15,8 @@ public class Enemy2Script : MonoBehaviour
     private float visualTime = 0.0f;
 
     public ParticleSystem DeathParticles;
+    public GameObject Ammo_Dropped;
 
-  
     void Start()
     {
         //  StartCoroutine(SelfDestruct());
@@ -78,6 +78,11 @@ public class Enemy2Script : MonoBehaviour
             Destroy(this.gameObject);
             Instantiate(DeathParticles, transform.position, transform.rotation);
 
+            int randNum = Random.Range(0, 10);
+            if (randNum >= 5)
+            {
+                Instantiate(Ammo_Dropped, transform.position, transform.rotation);
+            }
         }
     }
     

@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - Enemy2
   - Enemy1
+  - Ammo_Dropped
   layers:
   - Default
   - TransparentFX

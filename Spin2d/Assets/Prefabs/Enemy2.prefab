@@ -181,3 +181,5 @@ MonoBehaviour:
   timestamp: 0
   DeathParticles: {fileID: 6691854680416293912, guid: e7cb505e1611441f68e74e188b4678e0,
     type: 3}
+  Ammo_Dropped: {fileID: 7881057636233378376, guid: a8d389b6658c3c94e8cff76831b6c03d,
+    type: 3}
