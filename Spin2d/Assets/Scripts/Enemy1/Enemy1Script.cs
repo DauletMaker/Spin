@@ -8,7 +8,7 @@ public class Enemy1Script : MonoBehaviour
     private Transform target;
     public float speed = 5f;
     public ParticleSystem DeathParticles;
-
+    public GameObject Ammo_Dropped;
     void Start()
     {
       //  StartCoroutine(SelfDestruct());
@@ -55,6 +55,12 @@ public class Enemy1Script : MonoBehaviour
 
             Instantiate(DeathParticles, transform.position, transform.rotation);
             DeathParticles.Play();
+            int randNum = Random.Range(0, 10);
+            if (randNum >=5 )
+            {
+                Instantiate(Ammo_Dropped, transform.position, transform.rotation);
+            }
+           
         }
     }
 }
