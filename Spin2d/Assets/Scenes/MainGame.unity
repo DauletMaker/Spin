@@ -822,6 +822,9 @@ MonoBehaviour:
   BulletBar: {fileID: 1397584728}
   ammo: 0
   CanShoot: 0
+  shakeMagnitude: 0.05
+  shakeTime: 0.5
+  mainCamera: {fileID: 1740217494}
 --- !u!1 &1581333306
 GameObject:
   m_ObjectHideFlags: 0
