@@ -43,7 +43,7 @@ public class Enemy2Script : MonoBehaviour
             speed = 0f;
             timer += Time.deltaTime;    
             
-            if (timer > waitTime)   //condition to spawn Enemy2 every 1 second.
+            if (timer > waitTime)   //condition to spawn Enemy2 bullet every 1 second.
             {
                 visualTime = timer;
 
