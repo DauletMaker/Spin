@@ -39,7 +39,7 @@ public class PlayerShootingScript : MonoBehaviour
 
         if(ammo == 0)
         {
-            StartCoroutine(AmmoRegenerate());
+            StartCoroutine(WaitForReload());
             CanShoot = false;
         }
         if(ammo == 5)
@@ -48,29 +48,22 @@ public class PlayerShootingScript : MonoBehaviour
         }
     }
 
-    public IEnumerator AmmoRegenerate()
+    public IEnumerator WaitForReload()
     {
-        if(ammo < 5)
-        {
-            yield return new WaitForSeconds(0.4f);
-            ammo = 1;
-            BulletBar.Play("Health1");
-            yield return new WaitForSeconds(0.4f);
-            ammo = 2;
-            BulletBar.Play("Health2");
-            yield return new WaitForSeconds(0.4f);
-            ammo = 3;
-            BulletBar.Play("Health3");
-            yield return new WaitForSeconds(0.4f);
-            ammo = 4;
-            BulletBar.Play("Health4");
-            yield return new WaitForSeconds(0.4f);
-            ammo = 5;
-            BulletBar.Play("HealthFull");
-            
-
-        }
+        yield return new WaitForSeconds(1.4f);
+        StartCoroutine(AmmoRegenerate());
     }
+      public IEnumerator AmmoRegenerate()
+      {
+        
+        while (ammo < 5)
+        {
+            ammo++;
+            BulletBar.SetTrigger("Ammo++");
+            yield return new WaitForSeconds(0.7f);
+        }
+       
+      }
 
     public void Shake()
     {
@@ -101,6 +94,7 @@ public class PlayerShootingScript : MonoBehaviour
         if (collision.gameObject.tag == "Ammo_Dropped")
         {
             ammo++;
+            BulletBar.SetTrigger("Ammo++");
             Destroy(collision.gameObject);
         }
     }

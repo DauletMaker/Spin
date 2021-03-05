@@ -27,12 +27,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A))
         {
-            player.transform.Rotate(Vector3.forward * 70 * spinSpeed);
+            player.transform.Rotate(Vector3.forward * 85 * spinSpeed);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            player.transform.Rotate(Vector3.forward * -70 * spinSpeed);
+            player.transform.Rotate(Vector3.forward * -85 * spinSpeed);
         }
     }
 }
