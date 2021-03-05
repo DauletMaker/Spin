@@ -46,6 +46,11 @@ public class PlayerShootingScript : MonoBehaviour
         {
             CanShoot = true;
         }
+        if(ammo > 5)
+        {
+            ammo--;
+        }
+      
     }
 
       public IEnumerator AmmoRegenerate()
@@ -59,7 +64,6 @@ public class PlayerShootingScript : MonoBehaviour
                 yield return new WaitForSeconds(0.7f);
             }
         }
-        
        
       }
 
