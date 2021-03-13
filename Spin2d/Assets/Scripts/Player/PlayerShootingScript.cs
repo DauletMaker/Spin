@@ -32,10 +32,9 @@ public class PlayerShootingScript : MonoBehaviour
             Debug.Log("tRUBI");
 
             rb.AddForce(transform.up * 1500f);
-            if(ammo>0)
-            {
+            
                 ammo--;
-            }
+            
            
           
             Shake();
@@ -43,13 +42,12 @@ public class PlayerShootingScript : MonoBehaviour
 
         if(ammo == 0)
         {
-            StartCoroutine(AmmoRegenerate());
+          
             CanShoot = false;
+            ammo = 5;
+            StartCoroutine(AmmoRegenerate());
         }
-        if(ammo == 5)
-        {
-            CanShoot = true;
-        }
+       
         if(ammo > 5)
         {
             ammo = 5;
@@ -63,8 +61,8 @@ public class PlayerShootingScript : MonoBehaviour
       {
 
         yield return new WaitForSeconds(1.8f);
-        ammo = 5;
-          
+       
+        CanShoot = true;
        
       }
 
