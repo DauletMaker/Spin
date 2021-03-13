@@ -32,7 +32,11 @@ public class PlayerShootingScript : MonoBehaviour
             Debug.Log("tRUBI");
 
             rb.AddForce(transform.up * 1500f);
-            ammo--;
+            if(ammo>0)
+            {
+                ammo--;
+            }
+           
           
             Shake();
         }
@@ -48,22 +52,19 @@ public class PlayerShootingScript : MonoBehaviour
         }
         if(ammo > 5)
         {
-            ammo--;
+            ammo = 5;
         }
+
+        
       
     }
 
       public IEnumerator AmmoRegenerate()
       {
-        if(ammo < 5)
-        {
-            while (ammo < 5)
-            {
-                ammo++;
-              
-                yield return new WaitForSeconds(0.7f);
-            }
-        }
+
+        yield return new WaitForSeconds(1.8f);
+        ammo = 5;
+          
        
       }
 
@@ -93,14 +94,14 @@ public class PlayerShootingScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ammo_Dropped")
+        if (collision.gameObject.tag == "Ammo_Dropped" && ammo < 5)
         {
-            if(ammo<5)
-            {
+            
                 ammo++;
              
 
-            }
+            
+          
 
            
             Destroy(collision.gameObject);
