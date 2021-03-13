@@ -728,8 +728,6 @@ MonoBehaviour:
   shakeMagnitude: 0.05
   shakeTime: 0.5
   mainCamera: {fileID: 1740217494}
-  ShootingEffect: {fileID: 6691854680416293912, guid: 7119def70ccc74946b324e5b7bd7bc9e,
-    type: 3}
 --- !u!1 &1581333306
 GameObject:
   m_ObjectHideFlags: 0
