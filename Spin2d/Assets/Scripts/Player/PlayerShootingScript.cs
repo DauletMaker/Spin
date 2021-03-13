@@ -14,7 +14,7 @@ public class PlayerShootingScript : MonoBehaviour
     public bool CanShoot;
 
     Vector3 cameraInitialPosition;
-    public float shakeMagnitude = 0.05f, shakeTime = 0.5f;
+    public float shakeMagnitude = 0.04f, shakeTime = 0.5f;
     public Camera mainCamera;
 
     void Start()
@@ -31,7 +31,7 @@ public class PlayerShootingScript : MonoBehaviour
             Instantiate(bullet, BulletPoint.transform.position, BulletPoint.transform.rotation);
             Debug.Log("tRUBI");
 
-            rb.AddForce(transform.up * 1000f);
+            rb.AddForce(transform.up * 1500f);
             ammo--;
             BulletBar.SetTrigger("Ammo--");
             Shake();
