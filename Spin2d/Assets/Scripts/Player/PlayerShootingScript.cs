@@ -94,16 +94,13 @@ public class PlayerShootingScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Ammo_Dropped" && ammo < 5)
+        if (collision.gameObject.tag == "Ammo_Dropped")
         {
-            
+            if(ammo < 5)
+            {
                 ammo++;
-             
-
+            }
             
-          
-
-           
             Destroy(collision.gameObject);
         }
     }

@@ -308,8 +308,8 @@ MonoBehaviour:
   m_DeadZoneHeight: 0.281
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.736
-  m_SoftZoneHeight: 0.753
+  m_SoftZoneWidth: 0.587
+  m_SoftZoneHeight: 0.587
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -723,7 +723,6 @@ MonoBehaviour:
   rb: {fileID: 1528153533}
   BulletPoint: {fileID: 51675835}
   bullet: {fileID: 2497451043766876212, guid: 1d882edc21a154892944c8f3aa055bfa, type: 3}
-  BulletBar: {fileID: 0}
   ammo: 0
   CanShoot: 0
   shakeMagnitude: 0.05
