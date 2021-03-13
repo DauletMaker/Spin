@@ -8,7 +8,7 @@ public class PlayerShootingScript : MonoBehaviour
     public GameObject BulletPoint;
     public GameObject bullet;
 
-    public Animator BulletBar;
+    
 
     public int ammo;
     public bool CanShoot;
@@ -33,7 +33,7 @@ public class PlayerShootingScript : MonoBehaviour
 
             rb.AddForce(transform.up * 1500f);
             ammo--;
-            BulletBar.SetTrigger("Ammo--");
+          
             Shake();
         }
 
@@ -60,7 +60,7 @@ public class PlayerShootingScript : MonoBehaviour
             while (ammo < 5)
             {
                 ammo++;
-                BulletBar.SetTrigger("Ammo++");
+              
                 yield return new WaitForSeconds(0.7f);
             }
         }
@@ -98,7 +98,7 @@ public class PlayerShootingScript : MonoBehaviour
             if(ammo<5)
             {
                 ammo++;
-                BulletBar.SetTrigger("Ammo++");
+             
 
             }
 
