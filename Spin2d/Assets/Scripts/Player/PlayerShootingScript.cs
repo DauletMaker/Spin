@@ -17,6 +17,8 @@ public class PlayerShootingScript : MonoBehaviour
     public float shakeMagnitude = 0.04f, shakeTime = 0.5f;
     public Camera mainCamera;
 
+    public ParticleSystem ShootingEffect;
+
     void Start()
     {
         ammo = 5;
@@ -34,7 +36,8 @@ public class PlayerShootingScript : MonoBehaviour
             rb.AddForce(transform.up * 1500f);
             
                 ammo--;
-            
+            Instantiate(ShootingEffect, transform.position, transform.rotation);
+            ShootingEffect.Play();
            
           
             Shake();
